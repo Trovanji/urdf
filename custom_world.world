@@ -1,0 +1,87 @@
+<sdf version="1.6">
+  <world name="default">
+
+    <!-- Light -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Box -->
+    <model name="box">
+      <static>true</static>
+      <pose>2 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>1 1 1</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>1 1 1</size></box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Table (flat box) -->
+    <model name="table">
+      <static>true</static>
+      <pose>0 2 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>2 1 0.8</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>2 1 0.8</size></box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Cylinder pillar -->
+    <model name="pillar">
+      <static>true</static>
+      <pose>-2 -1 0.75 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <cylinder><radius>0.2</radius><length>1.5</length></cylinder>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <cylinder><radius>0.2</radius><length>1.5</length></cylinder>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Wall -->
+    <model name="wall">
+      <static>true</static>
+      <pose>0 -3 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box><size>5 0.2 2</size></box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box><size>5 0.2 2</size></box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
